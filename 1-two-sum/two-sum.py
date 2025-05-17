@@ -12,6 +12,4 @@ class Solution:
             if (target - value) in numsDict:
                 for i in numsDict[target - value]:
                     if i != index:
-#                        output = [index,i]
-#                        output.sort()
                         return [index,i]
