@@ -15,7 +15,6 @@ class Solution:
             else:
                 prefixMultArrBw[index] = prefixMultArrBw[index+1]*nums[index]
 
-        print(prefixMultArrFw, prefixMultArrBw)
         for index in range(len(nums)):
 
                 if index == 0:
