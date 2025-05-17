@@ -27,25 +27,24 @@
 #         return nums
 
 
-class Solution:
+class Solution: # Time complexity: O(N), Space complexity: O(1)
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         prefixMultArrFw = [1]
         counter = 1
         rightSuffix = 1
+
+        # Creating the left prefix Mulitply matrix
         for index in range(len(nums)):
             if counter < len(nums):
-                # print(prefixMultArrFw[index], nums[index], "prefixMultArrFw[index], nums[index]")
                 prefixMultArrFw.append(prefixMultArrFw[index] * nums[index])
                 counter += 1
             else:
                 break
-        # print(prefixMultArrFw)        
-        for index in range(len(nums)-1, -1, -1):
+     
+        for index in range(len(nums)-1, -1, -1):   
             prefixMultArrFw[index] = prefixMultArrFw[index] * rightSuffix
             if index-1 >= 0:
                 rightSuffix *= nums[index]
-                # print(rightSuffix, "cbdbchdbc")
-        # print(prefixMultArrFw)
         return prefixMultArrFw
 
 
